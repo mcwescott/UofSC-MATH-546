@@ -1,3 +1,3 @@
 Solutions in the homeworks may be incomplete or have errors.
 
-Corrections welcome: add an issue.
+Comments, questions or corrections to mcwescott@gmail.com.

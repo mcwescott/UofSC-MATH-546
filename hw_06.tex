@@ -1,0 +1,188 @@
+\documentclass[%
+  10pt,
+  letterpaper
+]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{IEEEtrantools}
+\usepackage{MnSymbol}
+\DeclareMathOperator\lcm{lcm}
+% \usepackage{tikz}
+\IEEEeqnarraydefcolsep{0}{\leftmargini}
+\usepackage{bbm}
+\setlength\parindent{0pt}
+\setlength\parskip{4pt}
+\begin{document}
+\begin{center}
+{UNIVERSITY OF SOUTH CAROLINA}
+\end{center}
+\large{MATH-546 Algebraic Structures I\hfill Homework 6}
+\section*{Problems}
+\subsection*{Problem 1: }
+    \begin{enumerate}
+        \item[(a)] List all the possible decomposition types of elements of \( A_7 \).
+        \item[(b)] Find all the possible orders of elements of \( A_7 \). For each
+          possible order, give an example of an element that has that order.
+    \end{enumerate}
+
+\subsection*{Answer 1:}
+
+\begin{enumerate}
+\item[(a)] For \(S_7\) the possible types are (7), (6), (5,2), (5), (4,3), (4,2), (4),
+  (3,3), (3,2,2), (3,2), (3), (2,2,2), (2,2), (2), and ().  Of these (7), (5), (4,2), (3,3),
+  (3,2,2), (3), (2,2), and () are even and possible in \(A_7\).
+\item[(b)] These have orders of 7, 5, 4, 3, 6, 3, 2, and 0 respectively. Examples are
+  (1 2 3 4 5 6 7), (1 2 3 4 5), (1 2 3 4)(5 6), (1 2 3)(4 5 6), (1 2 3)(4 5)(6 7), (1 2 3),
+  (1 2)(3 4), and () respectively.
+\end{enumerate}
+
+
+
+\newpage
+\subsection*{Problem 2: }
+We say that a subgroup \( H \) of a group \( G \) is a normal subgroup if
+the following condition is satisfied:
+    \[
+        \forall x \in G, \, \forall h \in H, \quad xhx^{-1} \in H
+    \]
+    \begin{enumerate}
+        \item[(a)] Prove that \( A_n \) is a normal subgroup of \( S_n \).
+        \item[(b)] Prove that \( H = \{ e, (1\,2) \} \) is not a normal subgroup of \( S_3 \).
+    \end{enumerate}
+
+\subsection*{Answer 2:}
+
+\begin{enumerate}
+\item[(a)] If \(\alpha \in A_n\) then \(\alpha\) has even parity. Any \(\sigma\in S_n\)
+  has the same parity as its inverse and \(\sigma\alpha\sigma^{-1}\) has even parity
+  being the product of 3 even permutations, or an even and two odd.
+\item[(b)] Consider \((2\ 3)\in S_3\). Its inverse is itself and \((2\ 3)(1\,2)(2\ 3)=(1\ 3)\)
+  which is not in \(H\).
+    \end{enumerate}
+
+
+
+\newpage
+\subsection*{Problem 3: }
+\begin{enumerate}
+\item[(a)] Let \( G = A_4 \) and let \( H \) be the set consisting of the i
+  dentity and all elements of \( G \) of order 2. Is \( H \) a subgroup of \( G \)?
+  Prove your answer.
+\item[(b)] Let \( G = S_4 \) and let \( H \) be the set consisting of the identity
+  and all elements of \( G \) of order 2. Is \( H \) a subgroup of \( G \)?
+  Prove your answer.
+\end{enumerate}
+
+
+\subsection*{Answer 3:}
+\begin{enumerate}
+\item[(a)] Only permutations of type (2,2) in \(G\) are both even and of order 2.
+  They are self-inverses. Consider distinct \(\alpha, \beta \in G\).
+  Then \(\alpha,\ \beta\)
+  must have the forms \(\alpha=(a\ b)(c\ d)\) and \(\beta=(a\ c)(b\ d)\) for
+  some distinct \(a, b, c, d\in \{1,2,3,4\}\). The product
+  is \[(a\ b)(c\ d)(a\ c)(b\ d)=(a\ d)(b\ c)\] which is of order 2 and so \(H\) is closed.
+\item[(b)] No: Counterexample: both (1 3) and (1 2)(3 4) have order 2 but their product
+  (1 3)(1 2)(3 4) = (1 2 3 4) has
+  order 4. so \(H\) is not closed.
+\end{enumerate}
+
+
+
+\newpage
+\subsection*{Problem 4: }
+ Prove that
+    \[
+        A_4 = \{ \sigma^2 \mid \sigma \in S_4 \}.
+    \]
+    \textit{Hint:} One inclusion is easy. For the other inclusion, consider
+    the elements of \( A_4 \) written as either \( (i\, j\, k) \) or
+    \( (i\, j)(k\, l) \) where \( i, j, k, l \in \{1,2,3,4\} \). You
+    do not need to write each of the 12 elements of \( A_4 \), since
+    they can all be represented in one of these forms. You need to
+    prove that each one of these can be obtained as the square of some
+    element of \( S_4 \).
+    
+\subsection*{Answer 4:}
+\begin{itemize}
+\item[\(\supseteq\):] \(\sigma^2\) is even.
+\item[\(\subseteq\):] Consider distinct \(i,j,k,\ell \in \{1,2,3,4\}\). Then
+  \[ (i\ j)(k\ \ell)=(i\ j\ k\ \ell)(i\ j\ k\ \ell)
+  \] and \[(i\ j\ k) = (i\ k\ j)(i\ k\ j)
+  \] and of course \[e = ee\]
+  And that covers all possible elements of \(A_4\).
+\end{itemize}
+
+
+
+\newpage
+\subsection*{Problem 5: }
+Let \( H \) be a subgroup of \( A_4 \) and let \( a = (1\,2)(3\,4),
+\; b = (1\,2\,3) \in A_4 \). If \( a, b \in H \), prove that \( H \)
+must be equal to the entire \( A_4 \). 
+
+\textit{Hint:} Use the closure property to find a few more of the
+elements of \( H \); if you can find at least 7 different elements
+of \( H \), you can then invoke Lagrange’s theorem.
+\subsection*{Answer 5:} It's given that \(e, a, b \in H\). Note that \(a^2=e\) and \(b^3=e\).
+By closure
+the following are in \(H\):
+\begin{IEEEeqnarray*}{0rCl}
+  e & = & (\,)\\
+  a & = & (1\ 2)(3\ 4)\\
+  b & = & (1\ 2\ 3)\\
+  b^2 & = & (1\ 3\ 2) \\
+  ab  & = & (2\ 4\ 3)\\
+  ab^2 & = & (1\ 4\ 3)\\
+  ba & = & (1\ 3\ 4)\\
+  b^2a & = & (2\ 3\ 4)\\
+  aba & = & (1\ 4\ 2)\\
+  ab^2a & = & (1\ 2\ 4)\\
+  bab^2 & = & (1\ 4)(2\ 3)\\
+  abab^2 & = & (1\ 3)(2\ 4)
+\end{IEEEeqnarray*}
+
+We could have stopped at 7 and argued that the order of \(H\) is 7 or greater and
+must divide 12, the order of \(A_4\) and so the order of \(H\) is 12 and \(H=A_4\)
+but we only needed 5 more to finish the list.
+
+\newpage
+\section*{ Theoretical Questions}
+
+\subsection*{Problem 6: }
+Prove that \( |A_n| = n!/2 \).
+\subsection*{Answer 6:}
+Let \(O_n = S_n\setminus A_n\). Clearly \(O_n\) is the set of all odd
+permutations with \(A_n\cup O_n = S_n\) and \(A_n\cap O_n = \emptyset\)
+and so \(|A_n|+|O_n|=|S_n|=n!\). So all we need show is that \(|A_n|=|O_n|\).
+
+We do so by constructing a bijection \(F:A_n\mapsto O_n\) with inverse
+\(F^{-1}:O_n\mapsto A_n\). \(\forall\alpha\in A_n, \forall\beta\in O_n, F(\alpha) =
+\alpha\,(1\ 2)\in O_n\) and \(F^{-1}(\beta) = \beta\,(1\ 2) \in A_n\). \[F^{-1}(F(\alpha)) =
+\alpha\,(1\ 2)\,(1\ 2) = \alpha\] and \[F(F^{-1}(\beta) = \beta\,(1\ 2)\,(1\ 2) = \beta\]
+and \(F\) is indeed a bijection. Therefore \( |A_n| = n!/2 \). \(\square\)
+
+\newpage
+\subsection*{Problem 7: }
+ Prove that \( A_n \) is a subgroup of \( S_n \).
+\subsection*{Answer 7:}
+\(\forall a,b\in A_n\): \(a\) and \(b\) are both even and so therefore is \(b^{-1}\).
+And then \(ab^{-1}\) is even and \(ab^{-1}\in A_n\). \(\square\)
+
+
+\end{document}
+% \begin{IEEEeqnarray*}{0rCl} \end{IEEEeqnarray*}
+% \begin{IEEEeqnarray}{0rCl} \end{IEEEeqnarray}
+% \begin{pmatrix} \end{pmatrix}
+% \begin{vmatrix} \end{vmatrix}
+% \text{tr\,}
+% \text{det\,}
+% \text{diag\,}
+% \begin{itemize} \end{itemize}
+% \begin{enumerate} \end{enumerate}
+% \IEEEnonumber
+% \setcounter{equation}{}
+% \vert  \rangle    % ket
+% \langle \vert     % bra
+% \langle \vert  \vert  \rangle
